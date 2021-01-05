@@ -24,13 +24,9 @@ module.exports = {
     mode: mode,
     plugins: [
         new webpack.DefinePlugin({
-            API_URL: JSON.stringify(API_URL),
-            APP_VERSION: JSON.stringify(APP_VERSION),
-            COMMITHASH: JSON.stringify(gitRevisionPlugin.commithash()),
-            BRANCH: JSON.stringify(gitRevisionPlugin.branch()),
-            LAST_COMMIT: JSON.stringify(gitRevisionPlugin.version()),
-            AD_APP_ID: JSON.stringify(AD_APP_ID),
-            APP_INSIGHTS: JSON.stringify(APP_INSIGHTS)
+            API_URL: JSON.stringify(process.env.API_URL),
+            AD_APP_ID: JSON.stringify(process.env.AD_APP_ID),
+            APP_INSIGHTS: JSON.stringify(process.env.APP_INSIGHTS)
         })
     ]
 }
